@@ -1,5 +1,5 @@
 # Makefile for MATLAB/Octave Project
-.PHONY: validate run quiet-run demo test clean
+.PHONY: validate run quiet-run demo demo-dark demo-light demo-transparent test clean
 
 # The name of your main script (without the .m)
 SCRIPT_NAME = ice_cream_shop
@@ -21,9 +21,20 @@ run: validate
 quiet-run:
 	@octave --no-gui --eval "$(SCRIPT_NAME)"
 
-# Run the demo tape using vhs (make sure you have vhs installed and in your PATH)
-demo:
-	@vhs < demo.tape
+# Create the demo for GitHub Dark theme
+demo-dark:
+	@vhs < demo-dark.tape
+
+# Create the demo for GitHub Light theme
+demo-light:
+	@vhs < demo-light.tape
+
+# Create the demo with a transparent background (for social sharing)
+demo-transparent:
+	@vhs < demo-transparent.tape
+
+# demo: Run all demos
+demo: validate demo-dark demo-light demo-transparent
 
 # Test if Octave is working without the full CLI interaction,
 test: validate

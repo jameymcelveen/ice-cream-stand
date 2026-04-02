@@ -12,7 +12,11 @@ A Command Line Interface (CLI) application built in MATLAB/Octave for managing i
 
 ## 📺 Demo
 
-![Project Demo](demo.gif)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="demo-dark.gif">
+  <source media="(prefers-color-scheme: light)" srcset="demo-light.gif">
+  <img alt="Project Demo" src="demo-transparent.gif">
+</picture>
 
 ## 🛠️ Requirements & Installation
 

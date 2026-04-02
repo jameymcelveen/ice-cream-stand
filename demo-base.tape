@@ -1,10 +1,11 @@
-Output demo.gif
 Set FontSize 16
 Set FontFamily "JetBrains Mono"
 Set Width 800
 Set Height 600
 Set WindowBar Colorful
-Set Theme "GitHub Dark"
+Set WindowBarSize 40
+Set Margin 20
+Set BorderRadius 10
 Set TypingSpeed 0.1
 Set PlaybackSpeed 0.5 # Make output 2 times slower
 
