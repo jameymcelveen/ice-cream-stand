@@ -12,7 +12,7 @@ function ice_cream_shop()
     keep_ordering = true; % <SM:BOOL:LASTNAME>
 
     fprintf('\n-- 🍦 Welcome to the Ice Cream Shop 🍦 --\n');
-    fprintf('\n-- ✏️ What can I get for you? --\n');
+    fprintf('\n-- ✏️  What can I get for you? --\n\n');
     % <SM:WHILE:LASTNAME>
     while keep_ordering
         
@@ -40,7 +40,7 @@ function ice_cream_shop()
         if strcmpi(cont, 'n')
             keep_ordering = false;
         elseif strcmpi(cont, 'y')
-            fprintf('\n-- ✏️ Would you like anything else? \n');
+            fprintf('\n-- ✏️  What else would you like? --\n\n');
         end
     end
 
@@ -58,9 +58,9 @@ function ice_cream_shop()
     visualizeOrders(all_orders, flavors);
      
     % Final Receipt Output
-    fprintf('-------------------------\n');
-    fprintf('--  🍦 YOUR RECEIPT 🍦  --\n');
-    fprintf('-------------------------\n');
+    fprintf('------------------------------\n');
+    fprintf('---  🍦 YOUR RECEIPT 🍦  ---\n');
+    fprintf('------------------------------\n');
     % <SM:FOR:LASTNAME>
     for j = 1:size(all_orders, 1)
         f_idx = all_orders(j, 1);
@@ -68,11 +68,11 @@ function ice_cream_shop()
         cost = scoops * all_orders(j, 3);
         fprintf('%d scoops of %s: $%.2f\n', scoops, flavors{f_idx}, cost);
     end
-    fprintf('-------------------------\n');
+    fprintf('------------------------------\n');
     fprintf('-- 💖 THANKS & ENJOY 💖 --\n');
-    fprintf('-------------------------\n');
+    fprintf('------------------------------\n');
     fprintf('TOTAL: $%.2f\n', total_bill);
-    fprintf('-------------------------\n');
+    fprintf('------------------------------\n');
 
 end
 

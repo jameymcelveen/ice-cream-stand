@@ -1,5 +1,5 @@
 # Makefile for MATLAB/Octave Project
-.PHONY: validate run test clean
+.PHONY: validate run quiet-run demo test clean
 
 # The name of your main script (without the .m)
 SCRIPT_NAME = ice_cream_shop
@@ -16,6 +16,14 @@ validate:
 run: validate
 	@echo "Launching $(SCRIPT_NAME)..."
 	@octave --no-gui --eval "$(SCRIPT_NAME)"
+
+# Run the script but suppress all output (for demo purposes)	
+quiet-run:
+	@octave --no-gui --eval "$(SCRIPT_NAME)"
+
+# Run the demo tape using vhs (make sure you have vhs installed and in your PATH)
+demo:
+	@vhs < demo.tape
 
 # Test if Octave is working without the full CLI interaction,
 test: validate
